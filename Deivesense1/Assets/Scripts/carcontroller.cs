@@ -20,6 +20,7 @@ public class Carcontroller : MonoBehaviour
     MotorForce();
     UpdateWheels();
     GetInput();
+    Steering();
 }
 void GetInput()
     {
@@ -30,6 +31,11 @@ void GetInput()
     {
         frontrightcollider.motorTorque = motorforce * verticalInput;
         frontleftcollider.motorTorque = motorforce * verticalInput;
+    }
+    void Steering()
+    {
+        frontrightcollider.steerAngle = horizantalInput * 30f;
+        frontleftcollider.steerAngle = horizantalInput * 30f;
     }
 
     void UpdateWheels()
