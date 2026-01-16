@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Carcontroller : MonoBehaviour
 {
     public WheelCollider frontrightcollider;
     public WheelCollider backrightcollider;
@@ -11,17 +11,24 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public Transform backrightwheeltransform;
     public Transform frontleftwheeltransform;
     public Transform backleftwheeltransform;
-
-    void FixedUpdate()
+    float verticalInput;
+    float horizantalInput;
+   void FixedUpdate()
+{
+    Debug.Log("FixedUpdate running");
+    MotorForce();
+    UpdateWheels();
+    GetInput();
+}
+void GetInput()
     {
-        MotorForce();
-        UpdateWheels();
+        verticalInput = Input.GetAxis("Vertical");
+        horizantalInput = Input.GetAxis("Horizontal");
     }
-
     void MotorForce()
     {
-        frontrightcollider.motorTorque = 10f;
-        frontleftcollider.motorTorque = 10f;
+        frontrightcollider.motorTorque = 10f * verticalInput;
+        frontleftcollider.motorTorque = 10f * verticalInput;
     }
 
     void UpdateWheels()
