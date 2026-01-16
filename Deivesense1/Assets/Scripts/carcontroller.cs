@@ -13,6 +13,7 @@ public class Carcontroller : MonoBehaviour
     public Transform backleftwheeltransform;
     float verticalInput;
     float horizantalInput;
+    public float motorforce = 100f;
    void FixedUpdate()
 {
     Debug.Log("FixedUpdate running");
@@ -27,8 +28,8 @@ void GetInput()
     }
     void MotorForce()
     {
-        frontrightcollider.motorTorque = 10f * verticalInput;
-        frontleftcollider.motorTorque = 10f * verticalInput;
+        frontrightcollider.motorTorque = motorforce * verticalInput;
+        frontleftcollider.motorTorque = motorforce * verticalInput;
     }
 
     void UpdateWheels()
