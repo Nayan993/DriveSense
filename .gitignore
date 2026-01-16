@@ -8,6 +8,10 @@ cat << EOF > .gitignore
 [Ll]ogs/
 UserSettings/
 
+# Unity Plastic SCM (IMPORTANT)
+.plastic/
+plastic/
+
 # ================= DOTNET =================
 *.csproj
 *.sln
