@@ -18,6 +18,7 @@ public class Carcontroller : MonoBehaviour
 
     public float motorforce = 100f;
     public float steeringAngle = 30f;
+    public float brakeforce = 1000f;
     void Start()
     {
         rigidbody.centerOfMass = carCentreOfMassTransform.localPosition;
@@ -29,6 +30,8 @@ public class Carcontroller : MonoBehaviour
         UpdateWheels();
         GetInput();
         Steering();
+        ApplyBrakes();
+
     }
 
     void GetInput()
@@ -36,7 +39,24 @@ public class Carcontroller : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         horizantalInput = Input.GetAxis("Horizontal");
     }
-
+    void ApplyBrakes()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            frontrightcollider.brakeTorque = brakeforce;
+            frontleftcollider.brakeTorque = brakeforce;
+            backrightcollider.brakeTorque = brakeforce;
+            backleftcollider.brakeTorque = brakeforce;
+        }
+        else
+        {
+            frontrightcollider.brakeTorque = 0f;
+            frontleftcollider.brakeTorque = 0f;
+            backrightcollider.brakeTorque = 0f;
+            backleftcollider.brakeTorque = 0f;
+        }
+        
+    }
     void MotorForce()
     {
         frontrightcollider.motorTorque = motorforce * verticalInput;
