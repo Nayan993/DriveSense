@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Carcontroller : MonoBehaviour
 {
-    public WheelCollider frontrightcollider;
-    public WheelCollider backrightcollider;
-    public WheelCollider frontleftcollider;
-    public WheelCollider backleftcollider;
+    [SerializeField]private WheelCollider frontrightcollider;
+    [SerializeField]private WheelCollider backrightcollider;
+    [SerializeField]private WheelCollider frontleftcollider;
+    [SerializeField]private WheelCollider backleftcollider;
 
-    public Transform frontrightwheeltransform;
-    public Transform backrightwheeltransform;
-    public Transform frontleftwheeltransform;
-    public Transform backleftwheeltransform;
-    public Transform carCentreOfMassTransform;
-    public Rigidbody rigidbody;
+    [SerializeField] private Transform frontrightwheeltransform;
+    [SerializeField] private Transform backrightwheeltransform;
+    [SerializeField] private Transform frontleftwheeltransform;
+    [SerializeField] private Transform backleftwheeltransform;
+    [SerializeField] private Transform carCentreOfMassTransform;
+    [SerializeField] private Rigidbody rigidbody;
     float verticalInput;
     float horizantalInput;
 
-    public float motorforce = 100f;
-    public float steeringAngle = 30f;
-    public float brakeforce = 1000f;
+    [SerializeField]private float motorforce = 100f;
+    [SerializeField]private float steeringAngle = 30f;
+    [SerializeField]private float brakeforce = 1000f;
     void Start()
     {
         rigidbody.centerOfMass = carCentreOfMassTransform.localPosition;
