@@ -2,16 +2,20 @@ using UnityEngine;
 
 public class FollowCar : MonoBehaviour
 {
-    public Transform carTransform;
-    public Transform cameraPointtransform;
+    private Transform playerCarTransform;
+    private Transform cameraPointTransform;
     private Vector3 velocity = Vector3.zero;
-
+    void Start()
+    {
+        playerCarTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        cameraPointTransform = playerCarTransform.Find("CameraPoint").GetComponent<Transform>();
+    }
     void LateUpdate()
     {
-        transform.LookAt(carTransform);
+        transform.LookAt(playerCarTransform);
         transform.position = Vector3.SmoothDamp(
             transform.position,
-            cameraPointtransform.position,
+            cameraPointTransform.position,
             ref velocity,
             0.2f
         );
