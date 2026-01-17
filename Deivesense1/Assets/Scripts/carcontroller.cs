@@ -11,11 +11,17 @@ public class Carcontroller : MonoBehaviour
     public Transform backrightwheeltransform;
     public Transform frontleftwheeltransform;
     public Transform backleftwheeltransform;
+    public Transform carCentreOfMassTransform;
+    public Rigidbody rigidbody;
     float verticalInput;
     float horizantalInput;
 
     public float motorforce = 100f;
     public float steeringAngle = 30f;
+    void Start()
+    {
+        rigidbody.centerOfMass = carCentreOfMassTransform.localPosition;
+    }
     void FixedUpdate()
     {
         Debug.Log("FixedUpdate running");
