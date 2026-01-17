@@ -12,20 +12,20 @@ public class Carcontroller : MonoBehaviour
     [SerializeField] private Transform frontleftwheeltransform;
     [SerializeField] private Transform backleftwheeltransform;
     [SerializeField] private Transform carCentreOfMassTransform;
-    [SerializeField] private Rigidbody rigidbody;
-    float verticalInput;
-    float horizantalInput;
-
     [SerializeField]private float motorforce = 100f;
     [SerializeField]private float steeringAngle = 30f;
     [SerializeField]private float brakeforce = 1000f;
+    float verticalInput;
+    float horizantalInput;
+    private Rigidbody rigidbody;
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
         rigidbody.centerOfMass = carCentreOfMassTransform.localPosition;
     }
     void FixedUpdate()
     {
-        Debug.Log("FixedUpdate running");
+        // Debug.Log("FixedUpdate running");
         MotorForce();
         UpdateWheels();
         GetInput();
