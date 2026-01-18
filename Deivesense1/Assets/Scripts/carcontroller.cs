@@ -31,7 +31,6 @@ public class Carcontroller : MonoBehaviour
         GetInput();
         Steering();
         ApplyBrakes();
-
     }
 
     void GetInput()
@@ -85,5 +84,9 @@ public class Carcontroller : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.position = pos;
         wheelTransform.rotation = rot;
+    }
+    public float CarSpeed()
+    {
+        return rigidbody.linearVelocity.magnitude * 2.23693629f;
     }
 }
