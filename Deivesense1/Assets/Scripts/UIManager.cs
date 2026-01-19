@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI speedText;
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
         speedIcon.SetActive(true);
         distanceIcon.SetActive(true);
         scoreIcon.SetActive(true);
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -67,5 +69,10 @@ public class UIManager : MonoBehaviour
             maximumSpeed = currentSpeed;
         }
         maximumSpeedText.text = maximumSpeed.ToString("0" + "km/h");
+    }
+    public void TryAgian()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }
