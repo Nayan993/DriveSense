@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 932091465889542857}
   m_Layer: 0
   m_Name: Swift (1)
-  m_TagString: Untagged
+  m_TagString: TrafficVehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

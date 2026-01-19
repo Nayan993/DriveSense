@@ -19,6 +19,7 @@ public class Carcontroller : MonoBehaviour
     [SerializeField] private float motorforce = 100f;
     [SerializeField] private float steeringAngle = 30f;
     [SerializeField] private float brakeforce = 1000f;
+    [SerializeField] UIManager uiManager;
 
     float verticalInput;
     float horizantalInput;
@@ -118,5 +119,11 @@ public class Carcontroller : MonoBehaviour
     public float CarSpeed()
     {
         return rb.linearVelocity.magnitude * 2.23693629f; // m/s → mph
+    }
+    public void OnCollisionEnter(Collision collision )
+    {
+        if(collision.gameObject.tag == "TrafficVehicle"){
+             uiManager.GameOver();
+        }
     }
 }
