@@ -29747,6 +29747,9 @@ MonoBehaviour:
   carController: {fileID: 649243971}
   carTransform: {fileID: 543450652587318990}
   gameOverPanel: {fileID: 1627123770}
+  speedIcon: {fileID: 226213050}
+  distanceIcon: {fileID: 214647484}
+  scoreIcon: {fileID: 1074451066}
 --- !u!4 &1745686520
 Transform:
   m_ObjectHideFlags: 0

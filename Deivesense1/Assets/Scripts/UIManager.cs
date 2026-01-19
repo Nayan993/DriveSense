@@ -11,14 +11,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] Carcontroller carController;
     [SerializeField] Transform carTransform;
     [SerializeField] GameObject gameOverPanel;
-
-    private float distance = 0f;
+    [SerializeField] GameObject speedIcon;
+    [SerializeField] GameObject distanceIcon;
+    [SerializeField] GameObject scoreIcon;
+    private float distance = 0f; 
     private float speed = 0f;
     private float score = 0f;
     private float maximumSpeed = 0f;
     void Start()
     {
         gameOverPanel.SetActive(false);
+        speedIcon.SetActive(true);
+        distanceIcon.SetActive(true);
+        scoreIcon.SetActive(true);
     }
 
     // Update is called once per frame
@@ -46,6 +51,9 @@ public class UIManager : MonoBehaviour
     }
     public void GameOver()
     {
+        speedIcon.SetActive(false);
+        distanceIcon.SetActive(false);
+        scoreIcon.SetActive(false);
         Time.timeScale  = 0f;
         gameOverPanel.SetActive(true);
         totalScoreText.text = score.ToString("0");
