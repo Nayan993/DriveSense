@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CarSelection : MonoBehaviour
 {
     [SerializeField] GameObject[] cars;
@@ -26,5 +26,10 @@ public class CarSelection : MonoBehaviour
         {
             cars[i].SetActive(i == index);
         }
+    }
+    public void PlayButton()
+    {
+        SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("CarIndexValue", currentCarIndex);
     }
 }
