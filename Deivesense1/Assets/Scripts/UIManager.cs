@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI totalDistanceText;
     [SerializeField] TextMeshProUGUI maximumSpeedText;
     [SerializeField] Carcontroller carController;
-    [SerializeField] Transform carTransform;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject speedIcon;
     [SerializeField] GameObject distanceIcon;
@@ -27,7 +26,10 @@ public class UIManager : MonoBehaviour
         scoreIcon.SetActive(true);
         Time.timeScale = 1f;
     }
-
+    public void SetCarController(Carcontroller controller)
+    {
+        carController = controller;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,7 +40,7 @@ public class UIManager : MonoBehaviour
     }
     void DistanceUI()
     {
-        distance = carTransform.position.z / 1000;
+        distance = carController.transform.position.z / 1000;
         distanceText.text = distance.ToString("0.00" + "Km");
     }
     void SpeedUI()
@@ -48,7 +50,7 @@ public class UIManager : MonoBehaviour
     }
     void ScoreUI()
     {
-        score = carTransform.position.z * 3; //random value
+        score = carController.transform.position.z * 3; //random value
         scoreText.text = score.ToString("0");
     }
     public void GameOver()

@@ -245,10 +245,10 @@ MonoBehaviour:
   backrightcollider: {fileID: 6476415893069234461}
   frontleftcollider: {fileID: 6101546487889691755}
   backleftcollider: {fileID: 4703163555464872149}
-  frontrightwheeltransform: {fileID: 0}
-  backrightwheeltransform: {fileID: 0}
-  frontleftwheeltransform: {fileID: 0}
-  backleftwheeltransform: {fileID: 0}
+  frontrightwheeltransform: {fileID: 2791867888291418353}
+  backrightwheeltransform: {fileID: 459916982410995090}
+  frontleftwheeltransform: {fileID: 9218980965852757177}
+  backleftwheeltransform: {fileID: 5903256585718176988}
   carCentreOfMassTransform: {fileID: 9175645285645868370}
   motorforce: 120
   steeringAngle: 30

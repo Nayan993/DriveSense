@@ -29253,7 +29253,6 @@ MonoBehaviour:
   totalDistanceText: {fileID: 1304939870}
   maximumSpeedText: {fileID: 619831942}
   carController: {fileID: 0}
-  carTransform: {fileID: 0}
   gameOverPanel: {fileID: 1627123770}
   speedIcon: {fileID: 226213050}
   distanceIcon: {fileID: 214647484}
@@ -33945,6 +33944,7 @@ MonoBehaviour:
   - {fileID: 7815416173721670280, guid: 2d610650f3557ceac8c38ad6c526ad66, type: 3}
   - {fileID: 1008739799771550055, guid: 717cb478937ee3861a4e803862ecea69, type: 3}
   cameraMovement: {fileID: 963194230}
+  uIManager: {fileID: 1745686519}
 --- !u!4 &1983877513
 Transform:
   m_ObjectHideFlags: 0

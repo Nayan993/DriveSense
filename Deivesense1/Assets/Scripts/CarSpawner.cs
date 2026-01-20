@@ -4,6 +4,7 @@ public class CarSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] carssPrefabs;
     [SerializeField] CameraMovement cameraMovement;
+    [SerializeField] UIManager uIManager;
     void Start()
     {
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
@@ -21,5 +22,6 @@ public class CarSpawner : MonoBehaviour
         GameObject newCar = Instantiate(carssPrefabs[currentCarIndex], transform.position, transform.rotation);
         Carcontroller carController = newCar.GetComponent<Carcontroller>();
         cameraMovement.SetTransform(carController.transform);
+        uIManager.SetCarController(carController);
     }
 }
