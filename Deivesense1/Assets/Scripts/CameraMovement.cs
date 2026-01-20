@@ -8,7 +8,10 @@ public class CameraMovement : MonoBehaviour
     {
         
     }
-
+    public void SetTransform(Transform transform)
+    {
+        playerCarTransform = transform;
+    }
     // Update is called once per frame
     void LateUpdate()
     {

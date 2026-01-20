@@ -3,6 +3,7 @@ using UnityEngine;
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] carssPrefabs;
+    [SerializeField] CameraMovement cameraMovement;
     void Start()
     {
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
@@ -17,6 +18,8 @@ public class CarSpawner : MonoBehaviour
     void SpawnCar()
     {
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
-        Instantiate(carssPrefabs[currentCarIndex], transform.position, transform.rotation);
+        GameObject newCar = Instantiate(carssPrefabs[currentCarIndex], transform.position, transform.rotation);
+        Carcontroller carController = newCar.GetComponent<Carcontroller>();
+        cameraMovement.SetTransform(carController.transform);
     }
 }
