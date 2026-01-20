@@ -9,7 +9,10 @@ public class EndlessCity : MonoBehaviour
     {
         
     }
-
+      public void SetTransform(Transform transform)
+    {
+        playerCarTransform = transform;
+    }
     void Update()
     {
         if(playerCarTransform.position.z > transform.position.z + halfLength + 10f)

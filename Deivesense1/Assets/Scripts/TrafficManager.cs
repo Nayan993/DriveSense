@@ -16,7 +16,10 @@ public class TrafficManager : MonoBehaviour
     {
         StartCoroutine(TrafficSpawner());
     }
-
+    public void SetCarController(Carcontroller controller)
+    {
+        carController = controller;
+    }
     IEnumerator TrafficSpawner()
     {
         // Initial delay so game settles

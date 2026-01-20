@@ -33945,6 +33945,11 @@ MonoBehaviour:
   - {fileID: 1008739799771550055, guid: 717cb478937ee3861a4e803862ecea69, type: 3}
   cameraMovement: {fileID: 963194230}
   uIManager: {fileID: 1745686519}
+  cityArray:
+  - {fileID: 1470566528}
+  - {fileID: 1669201168}
+  trafficManager: {fileID: 169394707}
+  laneMovement: {fileID: 808434270}
 --- !u!4 &1983877513
 Transform:
   m_ObjectHideFlags: 0

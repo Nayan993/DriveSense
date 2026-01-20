@@ -5,6 +5,9 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] GameObject[] carssPrefabs;
     [SerializeField] CameraMovement cameraMovement;
     [SerializeField] UIManager uIManager;
+    [SerializeField] EndlessCity[] cityArray;
+    [SerializeField] TrafficManager trafficManager;
+    [SerializeField] LaneMovement laneMovement;
     void Start()
     {
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
@@ -23,5 +26,9 @@ public class CarSpawner : MonoBehaviour
         Carcontroller carController = newCar.GetComponent<Carcontroller>();
         cameraMovement.SetTransform(carController.transform);
         uIManager.SetCarController(carController);
+        cityArray[0].SetTransform(carController.transform);
+        cityArray[1].SetTransform(carController.transform);
+        trafficManager.SetCarController(carController);
+        laneMovement.SetTransform(carController.transform);
     }
 }
