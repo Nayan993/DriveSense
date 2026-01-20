@@ -28,9 +28,8 @@ public class CarSelection : MonoBehaviour
             cars[i].SetActive(i == index);
         }
     }
-    public void PlayButton()
+    public void SelectCar()
     {
-        SceneManager.LoadScene("Level01");
         PlayerPrefs.SetInt("CarIndexValue", currentCarIndex);
     }
 }
