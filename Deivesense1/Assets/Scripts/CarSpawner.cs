@@ -24,6 +24,8 @@ public class CarSpawner : MonoBehaviour
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
         GameObject newCar = Instantiate(carssPrefabs[currentCarIndex], transform.position, transform.rotation);
         Carcontroller carController = newCar.GetComponent<Carcontroller>();
+
+        carController.SetUiManager(uIManager);
         cameraMovement.SetTransform(carController.transform);
         uIManager.SetCarController(carController);
         cityArray[0].SetTransform(carController.transform);

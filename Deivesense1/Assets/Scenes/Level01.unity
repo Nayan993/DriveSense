@@ -13795,7 +13795,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829129615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1745686519}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: GarageButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829129615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33943,6 +33955,8 @@ MonoBehaviour:
   carssPrefabs:
   - {fileID: 7815416173721670280, guid: 2d610650f3557ceac8c38ad6c526ad66, type: 3}
   - {fileID: 1008739799771550055, guid: 717cb478937ee3861a4e803862ecea69, type: 3}
+  - {fileID: 6863400999239936318, guid: 6f438026c7e71e8ff81e2d17bc9e0cdf, type: 3}
+  - {fileID: 5123449338380516647, guid: 0f1b34bad2fb56d23a61681cfc6aadcb, type: 3}
   cameraMovement: {fileID: 963194230}
   uIManager: {fileID: 1745686519}
   cityArray:

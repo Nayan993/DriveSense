@@ -7,6 +7,7 @@ public class CarSelection : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         ShowCar(currentCarIndex);
     }
     public void NextCar()

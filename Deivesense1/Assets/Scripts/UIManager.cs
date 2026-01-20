@@ -77,4 +77,8 @@ public class UIManager : MonoBehaviour
         var currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+    public void GarageButton()
+    {
+        SceneManager.LoadScene("Garage");
+    }
 }

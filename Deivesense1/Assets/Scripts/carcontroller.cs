@@ -25,15 +25,20 @@ public class Carcontroller : MonoBehaviour
     float horizantalInput;
 
     private Rigidbody rb;
-
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+    }
+    void Start()
+    {
         // Stability settings
         rb.centerOfMass = carCentreOfMassTransform.localPosition;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.angularDamping = 2.5f;
+    }
+    public void SetUiManager(UIManager manager)
+    {
+        uiManager = manager;
     }
 
     void FixedUpdate()
