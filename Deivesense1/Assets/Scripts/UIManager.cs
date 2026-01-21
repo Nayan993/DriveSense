@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject speedIcon;
     [SerializeField] GameObject distanceIcon;
     [SerializeField] GameObject scoreIcon;
+    [SerializeField] CarEngineSound carEngineSound; // 🔹 ADDED
     private float distance = 0f; 
     private float speed = 0f;
     private float score = 0f;
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour
     }
     public void GameOver()
     {
+        CarEngineSound.isGameOver = true;
         speedIcon.SetActive(false);
         distanceIcon.SetActive(false);
         scoreIcon.SetActive(false);
@@ -74,6 +76,8 @@ public class UIManager : MonoBehaviour
     }
     public void TryAgian()
     {
+        CarEngineSound.isGameOver = false;
+
         var currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }

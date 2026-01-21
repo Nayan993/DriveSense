@@ -29389,6 +29389,7 @@ MonoBehaviour:
   speedIcon: {fileID: 226213050}
   distanceIcon: {fileID: 214647484}
   scoreIcon: {fileID: 1074451066}
+  carEngineSound: {fileID: 2263509623374430228, guid: 2d610650f3557ceac8c38ad6c526ad66, type: 3}
 --- !u!4 &1745686520
 Transform:
   m_ObjectHideFlags: 0
