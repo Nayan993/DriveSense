@@ -17842,6 +17842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GestureInputReceiver
   port: 5055
+  carController: {fileID: 0}
 --- !u!4 &1075200702
 Transform:
   m_ObjectHideFlags: 0
@@ -34202,6 +34203,7 @@ MonoBehaviour:
   - {fileID: 1669201168}
   trafficManager: {fileID: 169394707}
   laneMovement: {fileID: 808434270}
+  gestureInputReceiver: {fileID: 1075200701}
 --- !u!4 &1983877513
 Transform:
   m_ObjectHideFlags: 0
@@ -44039,8 +44041,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6894539460872375705}
   serializedVersion: 2
-  m_LocalRotation: {x: -6.123235e-17, y: 1, z: 6.123235e-17, w: 0.00000019470718}
-  m_LocalPosition: {x: 11.656204, y: 0.3978042, z: -3.8431914}
+  m_LocalRotation: {x: -5.27658e-24, y: 0.00000008617309, z: 6.617445e-24, w: 1}
+  m_LocalPosition: {x: 1563.54, y: 1269.0045, z: -3744.0833}
   m_LocalScale: {x: 14.443591, y: 51.65348, z: 11.0298815}
   m_ConstrainProportionsScale: 0
   m_Children: []

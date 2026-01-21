@@ -8,6 +8,8 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] EndlessCity[] cityArray;
     [SerializeField] TrafficManager trafficManager;
     [SerializeField] LaneMovement laneMovement;
+    [SerializeField] GestureInputReceiver gestureInputReceiver;
+
     void Start()
     {
         int currentCarIndex = PlayerPrefs.GetInt("CarIndexValue", 0);
@@ -32,5 +34,7 @@ public class CarSpawner : MonoBehaviour
         cityArray[1].SetTransform(carController.transform);
         trafficManager.SetCarController(carController);
         laneMovement.SetTransform(carController.transform);
+        gestureInputReceiver.carController = carController;
+
     }
 }
