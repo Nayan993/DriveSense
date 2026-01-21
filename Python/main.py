@@ -6,13 +6,14 @@ from gestures.hand_detector import HandDetector
 from gestures.gesture_classifier import GestureClassifier
 from gestures.gesture_mapping import GestureMapper
 
+from communication.unity_sender import UnitySender
 
 def main():
     camera = Camera()
     detector = HandDetector()
     classifier = GestureClassifier()
     mapper = GestureMapper()
-
+    sender = UnitySender()
     while True:
         frame = camera.read_frame()
 
@@ -24,6 +25,8 @@ def main():
 
         gesture = classifier.classify(landmarks)
         command = mapper.map_gesture(gesture)
+        if command and command != "IDLE":
+            sender.send(command)
 
         if gesture:
             cv2.putText(
