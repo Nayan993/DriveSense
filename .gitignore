@@ -19,6 +19,14 @@ plastic/
 *.pidb
 *.booproj
 
+# ================= PYTHON =================
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # ================= OS =================
 .DS_Store
 Thumbs.db
