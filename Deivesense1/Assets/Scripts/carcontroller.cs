@@ -20,6 +20,11 @@ public class Carcontroller : MonoBehaviour
     [SerializeField] private float steeringAngle = 30f;
     [SerializeField] private float brakeforce = 1000f;
     [SerializeField] UIManager uiManager;
+    // ================= GESTURE INPUT =================
+    [HideInInspector] public float gestureVertical = 0f;
+    [HideInInspector] public float gestureHorizontal = 0f;
+    [HideInInspector] public bool gestureBrake = false;
+
 
     float verticalInput;
     float horizantalInput;
@@ -53,10 +58,14 @@ public class Carcontroller : MonoBehaviour
 
     // ================= INPUT =================
     void GetInput()
-    {
-        verticalInput = Input.GetAxis("Vertical");
-        horizantalInput = Input.GetAxis("Horizontal");
-    }
+{
+    float keyVertical = Input.GetAxis("Vertical");
+    float keyHorizontal = Input.GetAxis("Horizontal");
+
+    verticalInput = Mathf.Abs(gestureVertical) > 0.01f ? gestureVertical : keyVertical;
+    horizantalInput = Mathf.Abs(gestureHorizontal) > 0.01f ? gestureHorizontal : keyHorizontal;
+}
+
 
     // ================= MOTOR =================
     void MotorForce()
@@ -94,7 +103,7 @@ public class Carcontroller : MonoBehaviour
     // ================= BRAKES =================
     void ApplyBrakes()
     {
-        float brake = Input.GetKey(KeyCode.Space) ? brakeforce : 0f;
+        float brake = (gestureBrake || Input.GetKey(KeyCode.Space)) ? brakeforce : 0f;
 
         frontrightcollider.brakeTorque = brake;
         frontleftcollider.brakeTorque = brake;
