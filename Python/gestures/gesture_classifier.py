@@ -1,34 +1,24 @@
-import math
-
-
 class GestureClassifier:
     def __init__(self):
         pass
 
     def classify(self, landmarks):
-        """
-        Classify hand gesture based on landmarks.
-        landmarks: list of (x, y, z), length = 21
-        returns: gesture string or None
-        """
-
         if landmarks is None or len(landmarks) != 21:
             return None
 
-        # Finger tip indices in MediaPipe
+        # Landmark indices
+        wrist = 0
         thumb_tip = 4
         index_tip = 8
         middle_tip = 12
         ring_tip = 16
         pinky_tip = 20
 
-        # Finger base indices
         index_base = 5
         middle_base = 9
         ring_base = 13
         pinky_base = 17
 
-        # Helper: check if finger is open
         def finger_open(tip, base):
             return landmarks[tip][1] < landmarks[base][1]
 
@@ -39,33 +29,28 @@ class GestureClassifier:
 
         open_fingers = sum([index_open, middle_open, ring_open, pinky_open])
 
-        # Palm orientation (up/down)
-        wrist_y = landmarks[0][1]
-        middle_base_y = landmarks[middle_base][1]
-        palm_down = wrist_y < middle_base_y
-
-        # Hand tilt (left/right)
-        wrist_x = landmarks[0][0]
-        index_base_x = landmarks[index_base][0]
-        tilt = index_base_x - wrist_x
-
-        # Gesture rules (as decided)
-        if open_fingers == 4 and not palm_down:
-            return "FULL_SPEED"
-
-        if open_fingers == 2 and index_open and middle_open:
-            return "REVERSE"
-
+        # ---------------- BRAKE ----------------
         if open_fingers == 0:
-            return "SLOW_SPEED"
-
-        if palm_down:
             return "BRAKE"
 
-        if tilt > 0.05:
-            return "RIGHT"
+        # ---------------- FULL SPEED ----------------
+        if open_fingers == 4:
+            return "FULL_SPEED"
 
-        if tilt < -0.05:
+        # ---------------- REVERSE ----------------
+        if index_open and middle_open and not ring_open and not pinky_open:
+            return "REVERSE"
+
+        # ---------------- SLOW SPEED (Half-closed palm) ----------------
+        if open_fingers == 3:
+            return "SLOW_SPEED"
+
+        # ---------------- LEFT ----------------
+        if index_open and not middle_open and not ring_open and not pinky_open:
             return "LEFT"
+
+        # ---------------- RIGHT ----------------
+        if pinky_open and not index_open and not middle_open and not ring_open:
+            return "RIGHT"
 
         return "IDLE"

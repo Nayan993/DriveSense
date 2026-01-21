@@ -1,4 +1,5 @@
 import cv2
+import time
 
 from camera.camera import Camera
 from gestures.hand_detector import HandDetector
@@ -14,8 +15,10 @@ def main():
 
     while True:
         frame = camera.read_frame()
+
         if frame is None:
-            break
+            time.sleep(0.01)
+            continue
 
         landmarks, annotated_frame = detector.detect_hand(frame)
 
