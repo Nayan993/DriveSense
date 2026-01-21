@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     private float maximumSpeed = 0f;
     void Start()
     {
+        CarEngineSound.isGameOver = false;
         gameOverPanel.SetActive(false);
         speedIcon.SetActive(true);
         distanceIcon.SetActive(true);

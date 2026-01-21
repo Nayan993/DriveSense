@@ -5,17 +5,22 @@ public class CarEngineSound : MonoBehaviour
     public Rigidbody carRb;
     private AudioSource engineAudio;
 
-    // 🔴 GLOBAL GAME OVER FLAG
     public static bool isGameOver = false;
 
-    void Start()
+    [Header("Engine Sound Settings")]
+    public float minPitch = 0.8f;
+    public float maxPitch = 2.2f;
+    public float minVolume = 0.2f;
+    public float maxVolume = 1.0f;
+
+    void Awake()
     {
+        isGameOver = false;
         engineAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        // 🔴 HARD STOP
         if (isGameOver)
         {
             if (engineAudio.isPlaying)
@@ -27,16 +32,30 @@ public class CarEngineSound : MonoBehaviour
 
         float speed = carRb.linearVelocity.magnitude;
 
-        if (speed > 0.2f)
+        if (speed > 0.1f)
         {
             if (!engineAudio.isPlaying)
                 engineAudio.Play();
 
-            engineAudio.pitch = Mathf.Clamp(1f + speed * 0.05f, 1f, 2.5f);
+            // VOLUME CONTROL (runtime)
+            engineAudio.volume = Mathf.Lerp(
+                minVolume,
+                maxVolume,
+                speed / 30f
+            );
+
+            // PITCH CONTROL (runtime)
+            engineAudio.pitch = Mathf.Lerp(
+                minPitch,
+                maxPitch,
+                speed / 30f
+            );
         }
         else
         {
-            engineAudio.Stop();
+            // Idle sound (very low)
+            engineAudio.volume = minVolume;
+            engineAudio.pitch = minPitch;
         }
     }
 }
