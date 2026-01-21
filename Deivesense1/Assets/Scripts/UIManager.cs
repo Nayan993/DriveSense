@@ -77,7 +77,7 @@ public class UIManager : MonoBehaviour
     public void TryAgian()
     {
         CarEngineSound.isGameOver = false;
-
+        CarEngineSound.isGameOver = false;
         var currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }

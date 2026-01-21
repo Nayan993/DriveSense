@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class BackgroundMusicController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private AudioSource musicSource;
+
+    void Awake()
     {
-        
+        musicSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Stop music immediately on Game Over
+        if (CarEngineSound.isGameOver)
+        {
+            if (musicSource.isPlaying)
+                musicSource.Stop();
+        }
     }
 }
