@@ -65,6 +65,10 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         totalScoreText.text = score.ToString("0");
         totalDistanceText.text = distance.ToString("0.00" + "Km");
+        LeaderboardManager.SaveScore(score);
+        Debug.Log("Score saved: " + score);
+Debug.Log("Total saved scores: " + PlayerPrefs.GetInt("ScoreCount"));
+
     }
     void MaximumSpeed()
     {

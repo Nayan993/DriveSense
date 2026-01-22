@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Garage.unity
     guid: 0054042ece653d3119e883df5eb8af8c
   - enabled: 1
+    path: Assets/Scenes/LeaderboardScene.unity
+    guid: 9da62cc009da88399ae99ca18a4d67f5
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 0a5fd9a47e4469a13a48c6ba71286a68
   m_configObjects:
