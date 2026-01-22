@@ -521,9 +521,13 @@ MonoBehaviour:
   backleftwheeltransform: {fileID: 6526571248949694713}
   carCentreOfMassTransform: {fileID: 6617711339729414831}
   motorforce: 150
-  steeringAngle: 30
-  brakeforce: 1500
+  steeringAngle: 27
+  brakeforce: 1800
   uiManager: {fileID: 0}
+  gestureVertical: 0
+  gestureHorizontal: 0
+  gestureBrake: 0
+  steeringSmoothSpeed: 5
 --- !u!114 &-8032195045496045720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarEngineSound
   carRb: {fileID: 4354645087465215053}
+  minPitch: 0.8
+  maxPitch: 2.2
+  minVolume: 0.2
+  maxVolume: 1
 --- !u!82 &7721807444043104280
 AudioSource:
   m_ObjectHideFlags: 0
