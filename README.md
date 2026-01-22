@@ -315,9 +315,9 @@ Essential dependencies for the gesture recognition backend:
 |---------|--------|-------------|----------|
 | **Open Palm** | Accelerate | All fingers extended, palm facing camera | Move forward |
 | **Closed Fist** | Brake/Stop | All fingers curled into palm | Slow down or stop |
-| **Hand Tilt Left** | Turn Left | Hand rotated 20-45° to the left | Steer left |
-| **Hand Tilt Right** | Turn Right | Hand rotated 20-45° to the right | Steer right |
-| **Neutral** | Coast | Hand centered, relaxed position | Maintain current speed |
+| **Index Finger** | Turn Left | Hand rotated 20-45° to the left | Steer left |
+| **Pinky Finger** | Turn Right | Hand rotated 20-45° to the right | Steer right |
+| **Two finger** | Coast | Hand centered, relaxed position | Maintain current speed |
 
 ### 6.2 Gesture-to-Control Mapping
 
