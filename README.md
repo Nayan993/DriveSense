@@ -825,7 +825,7 @@ Planned improvements and features for upcoming versions:
       <sub>Game Mechanics • UI/UX • Physics</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/anujsahu8847">
+      <a href="https://github.com/anujsahu8847-hash">
         <img src="https://github.com/anujsahu8847.png" width="100px;" alt="Anuj Sahu"/>
         <br />
         <sub><b>Anuj Sahu</b></sub>
